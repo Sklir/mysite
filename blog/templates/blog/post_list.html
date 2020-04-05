@@ -50,11 +50,19 @@
       </tr>
     </table>
     <h1>Тут мы сделаем фон</h1>
-    <div style="background-color: green; color: red; padding: 50px;">
-      <p>Барабашка</p>
-      <p>На
-        <span style="color:red">цветном</span>
-         фоне</p>
+     <div style="background-color: green; color: red; padding: 50px;">
+         <p>Барабашка</p>
+         <p>На
+             <span style="color:red">цветном</span>
+             фоне</p>
+     </div>
+     {% for post in posts %}
+        <div>
+            <p>published: {{ post.published_date }}</p>
+            <h1><a href="">{{ post.title }}</a></h1>
+            <p>{{ post.text|linebreaksbr }}</p>
+        </div>
+     {% endfor %}
    </body>
 </html>
 <!-- colspan - тег, с помощью которого в таблице можно охватить два и более столбца -->
